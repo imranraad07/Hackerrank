@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+
+ll xor1(ll n){
+    if(n%8 == 1)    return n ;
+    else if(n%8 == 3)    return 2 ;
+    else if(n%8 == 5)    return n+2 ;
+    else if(n%8 == 7)    return 0 ;
+
+    if(n%8 == 2)    return 2 ;
+    else if(n%8 == 4)    return n+2 ;
+    else if(n%8 == 6)    return 0 ;
+    else if(n%8 == 0)    return n ;
+    return 0 ;
+}
+
+int main() {
+
+    int T ;
+    cin >> T ;
+    while(T--){
+        ll l , r ;
+        cin >> l >> r ;
+        cout << ( xor1(r)^xor1(l-1)) << endl ;
+    }
+}

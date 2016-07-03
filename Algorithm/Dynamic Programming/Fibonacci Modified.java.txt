@@ -1,0 +1,20 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+ 
+public class Main {
+	public static void main(String args[]){
+		Scanner inp = new Scanner(System.in);
+			BigInteger a , b , c ;
+			a = inp.nextBigInteger();
+            b = inp.nextBigInteger();
+        int N ;
+        N = inp.nextInt() ;
+        for(int i = 3 ; i <= N ; i++){
+            c = b.multiply(b) ;
+            c = c.add(a) ;
+            a = b ;
+            b = c ;
+        }
+	   System.out.println(b);
+	}
+} 

@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+ll arr[100005] ;
+ 
+int main(){
+    int T , n ;
+    scanf("%d" , &T);
+    while(T--){
+        scanf("%d" , &n);
+        int i ;
+        for(i = 0 ; i < n ; i++){
+            scanf("%lld" , &arr[i]);
+        }
+        ll ret = arr[0] , mxsum = arr[0] ;
+        for (i = 1; i < n; i++){
+            mxsum = max(arr[i], mxsum+arr[i]);
+            ret = max(ret,mxsum) ;
+        }
+        sort(arr,arr+n);
+        ll ret2=arr[n-1] ;
+        for(i = n-2 ; i >= 0 ; i--){
+            if(arr[i] > 0)  ret2 += arr[i] ;
+        } 
+        printf("%lld %lld\n",ret,ret2);
+    }
+}

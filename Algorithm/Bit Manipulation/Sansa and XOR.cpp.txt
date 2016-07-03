@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int T ;
+    cin >> T ;
+    while(T--){
+        int u , n , i , a , ret = 0 ;
+        cin >> n ;
+        for(i = 0 ; i < n ; i++){
+            cin >> a ;
+            u = (n-i)*(i+1) ;
+//            cout<<u<<endl;
+            if(u&1) ret = ret^a ;
+        }
+        cout << ret << endl;
+    }
+}

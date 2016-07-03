@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string time;
+    while(cin >> time){
+        int u = (time[0]-'0')*10 + (time[1]-'0') ;
+        int l = time.length() ;
+        if(time[l-2] == 'P'){
+            u = 12 + u ;
+            if(u == 24) u = 12 ;
+            time[0] = u/10+'0' ;
+            time[1] = u%10+'0' ;
+            for(int i = 0 ; i < l-2 ; i++){
+                cout<<time[i];
+            }cout<<endl;
+        }
+        else{
+            if(u == 12){
+                time[0] = '0' ;
+                time[1] = '0' ;
+            }
+            for(int i = 0 ; i < l-2 ; i++){
+                cout<<time[i];
+            }cout<<endl;
+        }
+    }
+    return 0;
+}
