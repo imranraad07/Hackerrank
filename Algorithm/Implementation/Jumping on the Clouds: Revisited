@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std ;
+#define ll long long
+int arr[52] ;
+int main(){
+    int n , k ;
+    cin >> n >> k ;
+    for(int i = 0 ; i < n ; i++){
+        cin >> arr[i] ;
+        arr[n+i] = arr[i] ;
+    }
+    int u = 100 ;
+    int s = 0 ;
+    while(s < n){
+        if(arr[s + k]){
+            u -= 3 ;
+        }
+        else{
+            u -= 1 ;
+        }
+        s += k ;
+    }
+    cout << u << endl ;
+}
