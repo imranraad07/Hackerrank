@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+string buf = "SOS" ;
+int main(){
+    string S;
+    cin >> S;
+    int l = S.length() , r = 0 ;
+    for(int i = 0 ; i < l ; i++){
+        if(S[i] != buf[i%3])    r++ ;
+    }
+    cout << r << endl ;
+    return 0;
+}
